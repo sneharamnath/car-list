@@ -1,0 +1,30 @@
+.car-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px calc((100% - (255px * 3)) / 2);
+}
+
+.car-detail-card {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  color: #36454f;
+  height: 12rem;
+  flex: 0 0 40%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: greenyellow;
+}
+
+.car-subheading-container{
+    margin-bottom: 0.5rem;
+}
+
+.subheading-text{
+    font-weight: 500;
+    margin-right: 0.5rem;
+}

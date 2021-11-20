@@ -1,0 +1,40 @@
+/* .App {
+  text-align: center;
+} */
+.flex {
+  display: flex;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.select-container {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+}
+
+.button-container {
+  margin-top: 0.2rem;
+}
+
+.button {
+  background-color: orange;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: none;
+}
