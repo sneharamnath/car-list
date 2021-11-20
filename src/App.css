@@ -48,3 +48,8 @@
   font-weight: 500;
   color: #36454f;
 }
+
+.disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}

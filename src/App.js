@@ -106,7 +106,7 @@ function App() {
           <div className="select-container">
             <SelectComponent
               options={state.carBrandList}
-              defaultText='Brand'
+              defaultText="Brand"
               value={state.selectedBrand}
               onChange={(value) => {
                 dispatch({ type: "SET_CAR_MAKE", value: value });
@@ -114,7 +114,7 @@ function App() {
             />
             <SelectComponent
               options={state.carList}
-              defaultText='Model'
+              defaultText="Model"
               value={state.selectedCar}
               onChange={(value) => {
                 dispatch({ type: "SET_CAR_NAME", value: value });
@@ -123,7 +123,9 @@ function App() {
           </div>
           <div className="button-container">
             <button
-              className="button"
+              className={`button ${
+                !state.selectedBrand || !state.selectedCar ? "disabled" : ""
+              }`}
               onClick={() =>
                 dispatch({ type: "SET_SELECTED_CAR_BUTTON_CLICK" })
               }
