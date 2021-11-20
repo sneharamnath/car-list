@@ -25,7 +25,7 @@ function SelectComponent(props) {
       <OnOutsideClick onOutsideClick={closeDropdown}>
         <div className="dropdown-container">
           <div className="dropdown-header" onClick={toggleDropdown}>
-            {props.value || "Select"}
+            {props.value || `Select ${props.defaultText}`}
           </div>
           {isOpen && (
             <div className="dropdown-list-container">

@@ -106,6 +106,7 @@ function App() {
           <div className="select-container">
             <SelectComponent
               options={state.carMakeList}
+              defaultText='Brand'
               value={state.selectedMake}
               onChange={(value) => {
                 dispatch({ type: "SET_CAR_MAKE", value: value });
@@ -113,6 +114,7 @@ function App() {
             />
             <SelectComponent
               options={state.carList}
+              defaultText='Model'
               value={state.selectedCar}
               onChange={(value) => {
                 dispatch({ type: "SET_CAR_NAME", value: value });
