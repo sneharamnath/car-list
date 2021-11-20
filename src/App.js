@@ -9,7 +9,7 @@ const reducer = (state, action) => {
     case "FETCH_CAR_MAKE_LIST":
       return {
         ...state,
-        carMakeList: action.payload,
+        carBrandList: action.payload,
         carList: [],
         error: "",
         selectedCar: null,
@@ -20,15 +20,15 @@ const reducer = (state, action) => {
     case "FETCH_ERROR":
       return {
         ...state,
-        selectedMake: null,
+        selectedBrand: null,
         selectedCar: null,
         selectedCarFromButtonClick: null,
         carList: [],
-        carMakeList: [],
+        carBrandList: [],
         error: "",
       };
     case "SET_CAR_MAKE":
-      return { ...state, selectedMake: action.value, selectedCar: null };
+      return { ...state, selectedBrand: action.value, selectedCar: null };
     case "SET_CAR_NAME":
       return { ...state, selectedCar: action.value };
     case "FETCH_CAR_DETAILS":
@@ -43,8 +43,8 @@ const reducer = (state, action) => {
 function App() {
   const initialState = {
     carList: [],
-    carMakeList: [],
-    selectedMake: null,
+    carBrandList: [],
+    selectedBrand: null,
     selectedCar: null,
     selectedCarFromButtonClick: null,
     carDetails: [],
@@ -67,10 +67,10 @@ function App() {
 
   //FETCH THE CAR MODELS FOR A PARTICULAR MAKE
   useEffect(() => {
-    if (state.selectedMake) {
+    if (state.selectedBrand) {
       axios
         .get(`http://localhost:8080/api/models`, {
-          params: { make: state.selectedMake },
+          params: { make: state.selectedBrand },
         })
         .then((response) => {
           dispatch({ type: "FETCH_CAR_LIST", payload: response.data });
@@ -80,14 +80,14 @@ function App() {
         });
     }
     return () => {};
-  }, [state.selectedMake]);
+  }, [state.selectedBrand]);
 
   //FETCH THE CAR DETAILS
   useEffect(() => {
     if (state.selectedCarFromButtonClick) {
       axios
         .get(`http://localhost:8080/api/vehicles`, {
-          params: { make: state.selectedMake, model: state.selectedCar },
+          params: { make: state.selectedBrand, model: state.selectedCar },
         })
         .then((response) => {
           dispatch({ type: "FETCH_CAR_DETAILS", payload: response.data });
@@ -105,9 +105,9 @@ function App() {
         <div className="search-container">
           <div className="select-container">
             <SelectComponent
-              options={state.carMakeList}
+              options={state.carBrandList}
               defaultText='Brand'
-              value={state.selectedMake}
+              value={state.selectedBrand}
               onChange={(value) => {
                 dispatch({ type: "SET_CAR_MAKE", value: value });
               }}
