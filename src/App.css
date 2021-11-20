@@ -38,3 +38,13 @@
   outline: none;
   box-shadow: none;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.no-search-results {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #36454f;
+}

@@ -4,25 +4,16 @@ import React, { useState, useEffect } from "react";
 function CarDetailComponent({ carDetails }) {
   const [selectedCarIdx, setSelectedCarIdx] = useState(0);
 
-  useEffect(() => {
-    carDetails.map((item, index) => {
-      item.idx = ++index;
-    });
-    return () => {};
-    
-  }, []);
-
   return (
     <div>
-      {selectedCarIdx && (
-        <p>Selected Car Details: {JSON.stringify(selectedCarIdx)}</p>
-      )}
       <div className="car-details-container">
         {carDetails.map((item, index) => (
           <div
-            className="car-detail-card"
+            className={`car-detail-card ${
+              selectedCarIdx === index ? "selected" : ""
+            } `}
             key={index}
-            onClick={() => setSelectedCarIdx(item)}
+            onClick={() => setSelectedCarIdx(index)}
           >
             <div>
               <div className="car-heading">

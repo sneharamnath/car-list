@@ -131,8 +131,10 @@ function App() {
           </div>
         </div>
         <div>
-          {state.carDetails.length && (
+          {state.carDetails.length ? (
             <CarDetailComponent carDetails={state.carDetails} />
+          ) : (
+            <p className="text-center no-search-results">No search results</p>
           )}
         </div>
       </div>
