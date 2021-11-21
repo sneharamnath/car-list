@@ -1,0 +1,21 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.select-container {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+}
+
+.button-container {
+  margin-top: 0.2rem;
+}
+
+.no-search-results {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #36454f;
+}
