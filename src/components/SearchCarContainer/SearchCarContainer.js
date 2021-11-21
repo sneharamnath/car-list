@@ -1,6 +1,5 @@
 import "./SearchCar.css";
-import React, { useReducer, useState, useContext } from "react";
-import {} from "../../context/searchActions";
+import React, { useContext } from "react";
 import SelectComponent from "../SelectComponent/SelectComponent";
 import CarDetailComponent from "../CarDetailsComponent/CarDetailComponent";
 import carContext from "../../context/carContext";
